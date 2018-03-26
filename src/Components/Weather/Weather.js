@@ -4,7 +4,7 @@ import WeatherSearch from "./WeatherSearch";
 class Weather extends React.Component {
 
     state = {
-        weather: []
+        weather: null
     }
 
     componentDidMount() {
@@ -21,6 +21,13 @@ class Weather extends React.Component {
         return (
             <div>
                 <WeatherSearch/>
+                {
+                    weather &&
+                        <React.Fragment>
+                        <p>{weather.main.temp}</p>
+                        <p>{weather.main.humidity}</p>
+                        </React.Fragment>
+                }
             </div>
         )
     }
