@@ -30,13 +30,6 @@ class WeatherSearch extends React.Component {
                         onSubmit={this.handleSubmitChange}
                     >Znajdź</button>
                 </form>
-                {
-                    this.props.weather && this.props.weather.map(
-                        ({id, main}) => (
-                            <p key={id}>{main}</p>
-                        )
-                    )
-                }
             </div>
         )
     }
