@@ -12,6 +12,10 @@ class WeatherSearch extends React.Component {
         })
     }
 
+    handleSubmitChange = event => {
+        event.preventDefault()
+    }
+
     render() {
         return (
             <div>
@@ -22,7 +26,17 @@ class WeatherSearch extends React.Component {
                         value={this.state.inputValue}
                         onChange={this.handleInputChange}
                     />
+                    <button
+                        onSubmit={this.handleSubmitChange}
+                    >Znajdź</button>
                 </form>
+                {
+                    this.props.weather && this.props.weather.map(
+                        ({id, main}) => (
+                            <p key={id}>{main}</p>
+                        )
+                    )
+                }
             </div>
         )
     }
