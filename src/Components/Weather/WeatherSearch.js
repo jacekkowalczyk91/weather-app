@@ -28,7 +28,8 @@ class WeatherSearch extends React.Component {
                     />
                     <button
                         onSubmit={this.handleSubmitChange}
-                    >Znajdź</button>
+                    >Znajdź
+                    </button>
                 </form>
             </div>
         )
