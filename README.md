@@ -1,3 +1,7 @@
 Weather app
 
-App showing weather in your current location
+React + OpenWeatherMap API
+
+App showing weather at location you choose
+
+5-day forecast soon
