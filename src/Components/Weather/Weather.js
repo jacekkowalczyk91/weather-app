@@ -26,7 +26,6 @@ class Weather extends React.Component {
 
     render() {
         const {weather} = this.state
-        const src = `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
         return (
             <div className='weather-view'>
                 <h1>Get weather for your city</h1>
@@ -49,8 +48,7 @@ class Weather extends React.Component {
                         <p>Humidity: {weather.main.humidity}</p>
                         <p>Pressure: {weather.main.pressure}</p>
                         <p>Wind speed: {weather.wind.speed}</p>
-                        <p>{weather.weather[0].icon}</p>
-                        <img src={src} alt={weather.weather[0].description}/>
+                        <img src={'http://openweathermap.org/img/w/'+ weather.weather[0].icon + '.png'} alt={weather.weather[0].description}/>
                     </React.Fragment>
                 }
             </div>
