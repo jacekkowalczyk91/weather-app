@@ -6,13 +6,12 @@ class Weather extends React.Component {
     state = {
         weather: null,
         location: ''
-
     }
 
     fetchData = (event) => {
         event.preventDefault()
         let location = encodeURIComponent(this.state.location)
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=209c0c18886d791519db4cc4308daa95`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=209c0c18886d791519db4cc4308daa95&units=metric`)
             .then(response => response.json())
             .then(
                 weather => this.setState({weather})
@@ -27,6 +26,7 @@ class Weather extends React.Component {
 
     render() {
         const {weather} = this.state
+        const src = `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
         return (
             <div className='weather-view'>
                 <h1>Get weather for your city</h1>
@@ -41,11 +41,16 @@ class Weather extends React.Component {
                         type='submit'
                     >Znajdź
                     </button>
-                </form>                {
+                </form>
+                {
                     weather &&
                     <React.Fragment>
-                        <p>Temperature: {weather.main.temp}</p>
+                        <p>Temperature: {weather.main.temp} C</p>
                         <p>Humidity: {weather.main.humidity}</p>
+                        <p>Pressure: {weather.main.pressure}</p>
+                        <p>Wind speed: {weather.wind.speed}</p>
+                        <p>{weather.weather[0].icon}</p>
+                        <img src={src} alt={weather.weather[0].description}/>
                     </React.Fragment>
                 }
             </div>
