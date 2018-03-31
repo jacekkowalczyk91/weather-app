@@ -29,7 +29,9 @@ class Weather extends React.Component {
         return (
             <div className='weather-view'>
                 <h1>Get weather for your city</h1>
-                <form onSubmit={this.fetchData}>
+                <form
+                    onSubmit={this.fetchData}
+                    className='weather-form'>
                     <input
                         type='text'
                         placeholder='City name...'
@@ -38,17 +40,21 @@ class Weather extends React.Component {
                     />
                     <button
                         type='submit'
-                    >Znajdź
+                    >Get
                     </button>
                 </form>
                 {
                     weather &&
-                    <React.Fragment>
+                    <React.Fragment
+                        className='weather-single-view'>
+                        <p className='weather-single-view-city'>City: {weather.name}</p>
                         <p>Temperature: {weather.main.temp} C</p>
-                        <p>Humidity: {weather.main.humidity}</p>
-                        <p>Pressure: {weather.main.pressure}</p>
-                        <p>Wind speed: {weather.wind.speed}</p>
-                        <img src={'http://openweathermap.org/img/w/'+ weather.weather[0].icon + '.png'} alt={weather.weather[0].description}/>
+                        <p>Humidity: {weather.main.humidity} %</p>
+                        <p>Pressure: {weather.main.pressure} HPa</p>
+                        <p>Wind speed: {weather.wind.speed} m/s</p>
+                        <img src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'}
+                             alt={weather.weather[0].description}
+                             className='weather-single-view-img'/>
                     </React.Fragment>
                 }
             </div>

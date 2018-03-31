@@ -1,7 +1,69 @@
-.weather-view{
-    display: block;
-    text-align: center;
+body{
+    background-size: cover;
+    font-family: "DejaVu Sans"
+
 }
-.weather-view p {
-    color: aqua;
+.weather-view{
+
+}
+
+
+.weather-view h1{
+    position: absolute;
+    color: white;
+    font-family: "DejaVu Sans";
+    left: 25%;
+    top: 5%;
+
+}
+
+.weather-form{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    border-radius: 40px;
+}
+
+.weather-form > input{
+    width: 600px;
+    height: 50px;
+    border-radius: 40px;
+    border: solid transparent;
+    font-size: 2em;
+}
+.weather-form > input:focus{
+    border: solid yellow;
+}
+
+.weather-form > button{
+    position: absolute;
+    top: 120%;
+    left: 45%;
+    height: 35px;
+    width: 70px;
+
+}
+
+.weather-single-view{
+    border: 5px solid yellow;
+    padding: 10px;
+    color: #fff;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 30px;
+
+}
+
+.weather-single-view-city{
+    margin-left: 35%;
+}
+
+.weather-single-view-img{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 13%;
 }
