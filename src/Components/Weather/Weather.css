@@ -1,17 +1,27 @@
 body{
+    background: url("cold-front-63037_960_720.jpg") no-repeat;
     background-size: cover;
-    background: #2182ff;
-}
-.weather-view{
 
+}
+.textField {
+    border: none;
+    color: transparent;
+    text-shadow: 0 0 0 gray;
+    text-align: center;
+}
+.textField:focus {
+    outline: none;
+}
+.textField:focus::-webkit-input-placeholder {
+    opacity: 0;
 }
 
 
 .weather-view h1{
     position: absolute;
-    color: black;
-    left: 40%;
-    top: 19%;
+    color: white;
+    left: 25%;
+    top: 5%;
 
 }
 
@@ -61,7 +71,7 @@ body{
 
 .weather-single-view-img{
     position: absolute;
-    left: 34%;
-    top: 8%;
-    width: 10%;
+    left: 50%;
+    top: 40%;
+    width: 13%;
 }

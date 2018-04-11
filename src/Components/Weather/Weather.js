@@ -33,6 +33,7 @@ class Weather extends React.Component {
                     onSubmit={this.fetchData}
                     className='weather-form'>
                     <input
+                        className='textField'
                         type='text'
                         placeholder='City name...'
                         value={this.state.location}
@@ -45,16 +46,17 @@ class Weather extends React.Component {
                 </form>
                 {
                     weather &&
-                    <React.Fragment
-                        className='weather-single-view'>
-                        <p className='weather-single-view-city'>City: {weather.name}</p>
-                        <p>Temperature: {weather.main.temp} C</p>
-                        <p>Humidity: {weather.main.humidity} %</p>
-                        <p>Pressure: {weather.main.pressure} HPa</p>
-                        <p>Wind speed: {weather.wind.speed} m/s</p>
-                        <img src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'}
-                             alt={weather.weather[0].description}
-                             className='weather-single-view-img'/>
+                    <React.Fragment>
+                        <div className='weather-single-view'>
+                            <p className='weather-single-view-city'>City: {weather.name}</p>
+                            <p className='weather-single-view-temp'>Temperature: {weather.main.temp} C</p>
+                            <p className='weather-single-view-hum'>Humidity: {weather.main.humidity} %</p>
+                            <p className='weather-single-view-press'>Pressure: {weather.main.pressure} HPa</p>
+                            <p className='weather-single-view-wind'>Wind speed: {weather.wind.speed} m/s</p>
+                            <img src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'}
+                                 alt={weather.weather[0].description}
+                                 className='weather-single-view-img'/>
+                        </div>
                     </React.Fragment>
                 }
             </div>
