@@ -1,23 +1,25 @@
-body{
+body {
     background: url("cold-front-63037_960_720.jpg") no-repeat;
     background-size: cover;
 
 }
+
 .textField {
     border: none;
     color: transparent;
     text-shadow: 0 0 0 gray;
     text-align: center;
 }
+
 .textField:focus {
     outline: none;
 }
+
 .textField:focus::-webkit-input-placeholder {
     opacity: 0;
 }
 
-
-.weather-view h1{
+.weather-view h1 {
     position: absolute;
     color: white;
     left: 25%;
@@ -25,34 +27,35 @@ body{
 
 }
 
-.weather-form{
+.weather-form {
     position: absolute;
     top: 30%;
     left: 30%;
     border-radius: 40px;
 }
 
-.weather-form > input{
+.weather-form > input {
     width: 600px;
     height: 50px;
     border-radius: 40px;
     border: solid transparent;
     font-size: 2em;
 }
-.weather-form > input:focus{
+
+.weather-form > input:focus {
     border: solid yellow;
 }
 
-.weather-form > button{
+.weather-form > button {
     position: absolute;
     top: 120%;
     left: 45%;
     height: 35px;
     width: 70px;
-
+    border-radius: 15px;
 }
 
-.weather-single-view{
+.weather-single-view {
     border: 5px solid yellow;
     padding: 10px;
     color: #fff;
@@ -60,16 +63,16 @@ body{
     position: absolute;
     top: 50%;
     left: 33%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 30px;
 
 }
 
-.weather-single-view-city{
+.weather-single-view-city {
     margin-left: 35%;
 }
 
-.weather-single-view-img{
+.weather-single-view-img {
     position: absolute;
     left: 50%;
     top: 40%;

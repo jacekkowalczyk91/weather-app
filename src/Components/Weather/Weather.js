@@ -12,11 +12,21 @@ class Weather extends React.Component {
         event.preventDefault()
         let location = encodeURIComponent(this.state.location)
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=209c0c18886d791519db4cc4308daa95&units=metric`)
-            .then(response => response.json())
+            .then(response => {
+                if(response.ok){
+                    return response.json()
+                }else{
+                    throw new Error('Something went wrong')
+                }
+            })
             .then(
                 weather => this.setState({weather})
-            )
+            ).catch((error) => {
+            console.log(error)
+            alert('Nieprawidłowe dane')
+        })
     }
+
     handleInputChange = event => {
         this.setState({
             location: event.target.value
@@ -29,6 +39,7 @@ class Weather extends React.Component {
         return (
             <div className='weather-view'>
                 <h1>Get weather for your city</h1>
+
                 <form
                     onSubmit={this.fetchData}
                     className='weather-form'>
