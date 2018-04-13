@@ -11,7 +11,7 @@ class Weather extends React.Component {
     fetchData = (event) => {
         event.preventDefault()
         let location = encodeURIComponent(this.state.location)
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=209c0c18886d791519db4cc4308daa95&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=209c0c18886d791519db4cc4308daa95&units=metric`)
             .then(response => {
                 if(response.ok){
                     return response.json()
