@@ -1,5 +1,5 @@
 Weather app
-weather-app-bce55.firebaseapp.com
+https://weather-app-bce55.firebaseapp.com/
 React + OpenWeatherMap API
 
 App showing weather at location you choose
